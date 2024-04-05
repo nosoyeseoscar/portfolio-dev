@@ -1,27 +1,54 @@
 ---
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import Layout from "../layouts/Layout.astro";
+import SocialPills from "../components/SocialPills.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import TwitterIcon from "../icons/Twitter.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <section
-      class="w-full lg:w-[740px] mx-auto py-40 flex flex-row justify-between gap-4"
-    >
-      <img
-        class="h-32 rounded-full"
-        src="../../public/OscarPhoto.jpeg"
-        alt="oscar's photo comic"
-      />
-      <div class="flex flex-col gap-4">
-        <h1 class="text-5xl font-bold flex justify-left flex-row opacity-85">
-          Hi, I am Oscar Fuentes
-        </h1>
-        <h2 class="text-lg opacity-80 text-wrap">
-          Passionate about programming,
-          <span class="text-blue-100/90">Web Developer</span>, always seeking to
-          learn what's new or more optimal.
-        </h2>
+    <section class="w-full lg:w-[740px] mx-auto py-40">
+      <div class="flex flex-row justify-between gap-4">
+        <img
+          class="h-32 rounded-full"
+          src="../../public/OscarPhoto.jpeg"
+          alt="oscar's photo comic"
+        />
+        <div class="flex flex-col gap-4">
+          <h1 class="text-5xl font-bold flex justify-left flex-row opacity-85">
+            Hi, I am Oscar Fuentes
+          </h1>
+          <h2 class="text-lg opacity-80 text-wrap">
+            Passionate about programming,
+            <span class="text-blue-100/90">Web Developer</span>, always seeking
+            to learn what's new or more optimal.
+          </h2>
+        </div>
       </div>
+
+      <ul class="flex flex-row justify-center gap-x-6 mt-8">
+        <li>
+          <SocialPills
+            href="https://www.linkedin.com/in/oscar-fuentes-esteves-454652267/"
+          >
+            <LinkedInIcon class="size-6" />
+            LinkedIn
+          </SocialPills>
+        </li>
+        <li>
+          <SocialPills href="https://github.com/nosoyeseoscar">
+            <GitHubIcon class="size-6" />
+            GitHub
+          </SocialPills>
+        </li>
+        <li>
+          <SocialPills href="https://twitter.com/nosoyeseoscar">
+            <TwitterIcon class="size-6" />
+            X/Twitter
+          </SocialPills>
+        </li>
+      </ul>
     </section>
   </main>
 </Layout>
