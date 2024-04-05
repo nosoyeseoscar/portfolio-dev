@@ -3,5 +3,25 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main></main>
+  <main>
+    <section
+      class="w-full lg:w-[740px] mx-auto py-40 flex flex-row justify-between gap-4"
+    >
+      <img
+        class="h-32 rounded-full"
+        src="../../public/OscarPhoto.jpeg"
+        alt="oscar's photo comic"
+      />
+      <div class="flex flex-col gap-4">
+        <h1 class="text-5xl font-bold flex justify-left flex-row opacity-85">
+          Hi, I am Oscar Fuentes
+        </h1>
+        <h2 class="text-lg opacity-80 text-wrap">
+          Passionate about programming,
+          <span class="text-blue-100/90">Web Developer</span>, always seeking to
+          learn what's new or more optimal.
+        </h2>
+      </div>
+    </section>
+  </main>
 </Layout>
