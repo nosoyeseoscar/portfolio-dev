@@ -5,25 +5,33 @@ import SocialPills from "../components/SocialPills.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import TwitterIcon from "../icons/Twitter.astro";
 import MailIcon from "../icons/Mail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+  title="Portfolio Oscar Fuentes - Web Developer Programer"
+  description="Oscar's portfolio, see what I am capable of doing for you and your company, open to helping you with your projects"
+>
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-40">
+    <SectionContainer class="py-44 pb-22">
+      <!-- Hero Section -->
       <div class="flex flex-row justify-between gap-4">
+        <!-- TODO: Change Photo Maybe -->
         <img
           class="h-32 rounded-full"
           src="../../public/OscarPhoto.jpeg"
           alt="oscar's photo comic"
         />
         <div class="flex flex-col gap-4">
+          <!-- TODO: Implement the Header Sticky and remove Photo -->
           <h1 class="text-5xl font-bold flex justify-left flex-row opacity-85">
             Hi, I am Oscar Fuentes
           </h1>
           <h2 class="text-lg opacity-80 text-wrap">
             Passionate about programming,
             <span class="text-blue-100/90">Web Developer</span>, always seeking
-            to learn what's new or more optimal.
+            to learn what's new or more optimal. Unveiling the mysteries of the
+            BackEnd.
           </h2>
         </div>
       </div>
@@ -57,6 +65,9 @@ import MailIcon from "../icons/Mail.astro";
           </SocialPills>
         </li>
       </ul>
-    </section>
+    </SectionContainer>
+    <SectionContainer>
+      <!-- Projects Section -->
+    </SectionContainer>
   </main>
 </Layout>
