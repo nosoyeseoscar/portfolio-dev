@@ -1,7 +1,91 @@
 ---
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import Layout from "../layouts/Layout.astro";
+import SocialPills from "../components/SocialPills.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import TwitterIcon from "../icons/Twitter.astro";
+import MailIcon from "../icons/Mail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SubTaskIcon from "../icons/SubTask.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main></main>
+<Layout
+  title="Portfolio Oscar Fuentes - Web Developer Programer"
+  description="Oscar's portfolio, see what I am capable of doing for you and your company, open to helping you with your projects"
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-22">
+      <!-- Hero Section -->
+      <div class="flex sm:flex-row flex-col justify-between gap-4">
+        <!-- TODO: Change Photo Maybe -->
+        <img
+          class="md:h-32 lg:h-30 sm:h-36 h-60 mx-auto rounded-full"
+          src="../../public/OscarPhoto.jpeg"
+          alt="oscar's photo comic"
+        />
+        <div class="flex flex-col gap-4">
+          <!-- TODO: Implement the Header Sticky and remove Photo -->
+          <h1
+            class="lg:text-5xl md:text 4xl text-3xl font-bold flex sm:justify-start justify-center flex-row opacity-85"
+          >
+            Hi, I am Oscar Fuentes
+          </h1>
+          <h2 class="text-lg lg:text-2xl opacity-80 text-pretty">
+            Passionate about programming,
+            <span class="text-blue-100/90">Web Developer</span>, always seeking
+            to learn what's new or more optimal. Unveiling the mysteries of the
+            BackEnd.
+          </h2>
+        </div>
+      </div>
+
+      <ul class="flex flex-row justify-center lg:gap-x-2 gap-x-6 mt-8">
+        <li class="">
+          <SocialPills
+            href="https://www.linkedin.com/in/oscar-fuentes-esteves-454652267/"
+          >
+            <LinkedInIcon class="sm:size-4 md:size-6 size-8" />
+            <span class="hidden sm:flex">LinkedIn</span>
+          </SocialPills>
+        </li>
+        <li class="">
+          <SocialPills href="https://github.com/nosoyeseoscar">
+            <GitHubIcon class="sm:size-4 md:size-6 size-8" />
+            <span class="hidden sm:flex">GitHub</span>
+          </SocialPills>
+        </li>
+        <li class="">
+          <SocialPills href="https://twitter.com/nosoyeseoscar">
+            <TwitterIcon class="sm:size-4 md:size-6 size-8" />
+            <span class="hidden sm:flex">X/Twitter</span>
+          </SocialPills>
+        </li>
+        <li class="">
+          <!-- TODO: Change icon for filled icon -->
+          <SocialPills href="">
+            <MailIcon class="sm:size-4 md:size-6 size-8" />
+            <span class="hidden sm:flex">ofuentese@gmail.com</span>
+          </SocialPills>
+        </li>
+      </ul>
+    </SectionContainer>
+    <SectionContainer>
+      <!-- Projects Section -->
+      <h2 class="text-3xl font-semibold mb-36 flex gap-x-2 items-center">
+        Projects
+        <SubTaskIcon class="size-7" />
+      </h2>
+      <!-- Cuando ya se tengan más proyectos, se realizará un filtro con las tecnologías usadas para que el que lo lea, pueda ver los proyectos según la tecnología que éste buscando, podría ser con checkbox -->
+      <div>
+        <!-- Main projects -->
+        <h3>Proyectos Principales</h3>
+        <Projects />
+      </div>
+      <div>
+        <!-- Minor projects -->
+        Proyectos Secundarios
+      </div>
+    </SectionContainer>
+  </main>
 </Layout>
