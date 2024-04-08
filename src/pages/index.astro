@@ -20,7 +20,7 @@ import Projects from "../components/Projects.astro";
       <div class="flex sm:flex-row flex-col justify-between gap-4">
         <!-- TODO: Change Photo Maybe -->
         <img
-          class="md:h-32 lg:h-30 sm:h-36 h-60 mx-auto rounded-full"
+          class="md:h-32 lg:h-30 sm:h-36 h-60 mx-auto rounded-full shadow-lg shadow-white/10"
           src="../../public/OscarPhoto.jpeg"
           alt="oscar's photo comic"
         />
@@ -79,12 +79,7 @@ import Projects from "../components/Projects.astro";
       <!-- Cuando ya se tengan más proyectos, se realizará un filtro con las tecnologías usadas para que el que lo lea, pueda ver los proyectos según la tecnología que éste buscando, podría ser con checkbox -->
       <div>
         <!-- Main projects -->
-        <h3 class="text-2xl mb-4">Proyectos Principales</h3>
         <Projects />
-      </div>
-      <div>
-        <!-- Minor projects -->
-        Proyectos Secundarios
       </div>
     </SectionContainer>
   </main>
