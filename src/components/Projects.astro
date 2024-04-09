@@ -1,10 +1,20 @@
 ---
-import JavaScript from "../icons/JavaScript.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import CssIcon from "../icons/Css.astro";
+import HtmlIcon from "../icons/Html5.astro";
 
 const TAGS = {
   JAVASCRIPT: {
     name: "JavaScript",
-    icon: JavaScript,
+    icon: JavaScriptIcon,
+  },
+  CSS: {
+    name: "CSS",
+    icon: CssIcon,
+  },
+  HTML: {
+    name: "HTML",
+    icon: HtmlIcon,
   },
 };
 
@@ -16,7 +26,7 @@ const PROJECTS_MAIN = [
     link: "#",
     github: "#",
     image: "https://via.placeholder.com/300x200",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
     title: "Project 2",
@@ -25,7 +35,7 @@ const PROJECTS_MAIN = [
     link: "#",
     github: "#",
     image: "https://via.placeholder.com/300x200",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
 ];
 
@@ -37,7 +47,7 @@ const PROJECTS_SECOND = [
     link: "#",
     github: "#",
     image: "https://via.placeholder.com/300x200",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
     title: "Project 4",
@@ -46,7 +56,25 @@ const PROJECTS_SECOND = [
     link: "#",
     github: "#",
     image: "https://via.placeholder.com/300x200",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Project 5",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsum provident numquam omnis fuga saepe rem earum deserunt iure veniam assumenda similique quis alias quisquam tempora obcaecati, totam possimus repellat!",
+    link: "#",
+    github: "#",
+    image: "https://via.placeholder.com/300x200",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Project 6",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsum provident numquam omnis fuga saepe rem earum deserunt iure veniam assumenda similique quis alias quisquam tempora obcaecati, totam possimus repellat!",
+    link: "#",
+    github: "#",
+    image: "https://via.placeholder.com/300x200",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
 ];
 ---
@@ -64,25 +92,29 @@ const PROJECTS_SECOND = [
         <p class="mb-2 text-pretty opacity-75 ">{description}</p>
         <ul class="flex flex-row gap-3 items-center">
           {tags.map((tag) => (
-            <li>{tag}</li>
+            <li>
+              <tag.icon class="size-8" />
+            </li>
           ))}
         </ul>
       </div>
     </article>
   ))
 }
-{
-  PROJECTS_SECOND.map(({ title, description, tags }) => (
-    <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-zinc-900/80 hover:bg-zinc-800 rounded-xl p-4">
-      <div>
+<div class="grid grid-cols-2 my-8 mx-1 gap-4">
+  {
+    PROJECTS_SECOND.map(({ title, description, tags }) => (
+      <div class=" bg-zinc-900/80 hover:bg-zinc-800 rounded-xl p-4">
         <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
-        <p class="mb-2 text-pretty opacity-75 ">{description}</p>
+        <p class="mb-2 text-pretty opacity-75">{description}</p>
         <ul class="flex flex-row gap-3 items-center">
           {tags.map((tag) => (
-            <li>{tag}</li>
+            <li>
+              <tag.icon class="size-6" />
+            </li>
           ))}
         </ul>
       </div>
-    </article>
-  ))
-}
+    ))
+  }
+</div>
