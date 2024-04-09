@@ -8,16 +8,15 @@ const TAGS = {
   },
 };
 
-const PROJECTS = [
+const PROJECTS_MAIN = [
   {
-    title: "Project 1",
+    title: "My Blog",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsum provident numquam omnis fuga saepe rem earum deserunt iure veniam assumenda similique quis alias quisquam tempora obcaecati, totam possimus repellat!",
+      "A blog where I talk about technology, curiosities, and news from the tech world, tips and issues, and the solutions I encounter on my journey to become a developer.",
     link: "#",
     github: "#",
     image: "https://via.placeholder.com/300x200",
     tags: ["HTML", "CSS", "JavaScript"],
-    type: "main",
   },
   {
     title: "Project 2",
@@ -27,8 +26,10 @@ const PROJECTS = [
     github: "#",
     image: "https://via.placeholder.com/300x200",
     tags: ["HTML", "CSS", "JavaScript"],
-    type: "main",
   },
+];
+
+const PROJECTS_SECOND = [
   {
     title: "Project 3",
     description:
@@ -37,7 +38,6 @@ const PROJECTS = [
     github: "#",
     image: "https://via.placeholder.com/300x200",
     tags: ["HTML", "CSS", "JavaScript"],
-    type: "Secondary",
   },
   {
     title: "Project 4",
@@ -47,44 +47,42 @@ const PROJECTS = [
     github: "#",
     image: "https://via.placeholder.com/300x200",
     tags: ["HTML", "CSS", "JavaScript"],
-    type: "Secondary",
   },
 ];
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags, type }) => (
-    <div>
-      {type == "main" ? (
-        <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-zinc-900/80 hover:bg-zinc-800 rounded-xl p-4">
-          <img
-            class="rounded-xl shadow-lg shadow-white/10"
-            src={image}
-            alt={`Captura de pantalla del proyecto ${title}}`}
-          />
-          <div>
-            <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
-            <p class="mb-2 text-pretty">{description}</p>
-            <ul class="flex flex-row gap-3 items-center">
-              {tags.map((tag) => (
-                <li>{tag}</li>
-              ))}
-            </ul>
-          </div>
-        </article>
-      ) : (
-        <article class="flex flex-row my-8 mx-1 gap-4 border-2 border-gray-600 rounded-xl hover:border-gray-400 p-4">
-          <div>
-            <h3 class="text-2xl mb-2 font-semibold">{title}</h3>
-            <p class="mb-2 text-pretty">{description}</p>
-            <ul class="flex flex-row gap-3 items-center">
-              {tags.map((tag) => (
-                <li>{tag}</li>
-              ))}
-            </ul>
-          </div>
-        </article>
-      )}
-    </div>
+  PROJECTS_MAIN.map(({ image, title, description, tags }) => (
+    <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-zinc-900/80 hover:bg-zinc-800 rounded-xl p-4">
+      <img
+        class="rounded-xl shadow-lg shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title}}`}
+      />
+      <div>
+        <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
+        <p class="mb-2 text-pretty opacity-75 ">{description}</p>
+        <ul class="flex flex-row gap-3 items-center">
+          {tags.map((tag) => (
+            <li>{tag}</li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  ))
+}
+{
+  PROJECTS_SECOND.map(({ title, description, tags }) => (
+    <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-zinc-900/80 hover:bg-zinc-800 rounded-xl p-4">
+      <div>
+        <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
+        <p class="mb-2 text-pretty opacity-75 ">{description}</p>
+        <ul class="flex flex-row gap-3 items-center">
+          {tags.map((tag) => (
+            <li>{tag}</li>
+          ))}
+        </ul>
+      </div>
+    </article>
   ))
 }
