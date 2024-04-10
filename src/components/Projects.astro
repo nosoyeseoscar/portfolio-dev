@@ -2,6 +2,7 @@
 import JavaScriptIcon from "../icons/JavaScript.astro";
 import CssIcon from "../icons/Css.astro";
 import HtmlIcon from "../icons/Html5.astro";
+import LinkIcon from "../icons/Link.astro";
 
 const TAGS = {
   JAVASCRIPT: {
@@ -81,14 +82,17 @@ const PROJECTS_SECOND = [
 
 {
   PROJECTS_MAIN.map(({ image, title, description, tags }) => (
-    <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-zinc-900/80 hover:bg-zinc-800 rounded-xl p-4">
+    <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-[rgba(118,145,196,0.3)] dark:hover:bg-zinc-800 hover:bg-[rgba(118,145,196,0.5)] rounded-xl p-4 ">
       <img
-        class="rounded-xl shadow-lg shadow-white/10"
+        class="rounded-xl shadow-lg dark:shadow-white/10 shadow-slate-900/80"
         src={image}
         alt={`Captura de pantalla del proyecto ${title}}`}
       />
       <div>
-        <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
+        <div>
+          <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
+          <a target="_blank" rel="noopener noreferrer" />
+        </div>
         <p class="mb-2 text-pretty opacity-75 ">{description}</p>
         <ul class="flex flex-row gap-3 items-center">
           {tags.map((tag) => (
@@ -101,11 +105,22 @@ const PROJECTS_SECOND = [
     </article>
   ))
 }
-<div class="grid md:grid-cols-2 grid-cols-1 my-8 mx-1 gap-4">
+<div class="grid md:grid-cols-2 grid-cols-1 my-14 mx-1 gap-4">
   {
-    PROJECTS_SECOND.map(({ title, description, tags }) => (
-      <div class=" bg-zinc-900/80 hover:bg-zinc-800 rounded-xl p-4">
-        <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
+    PROJECTS_SECOND.map(({ title, description, tags, link }) => (
+      <div class="group bg-[rgba(118,145,196,0.05)] border-2 dark:border-black hover:border-2 hover:border-[rgba(118,145,196,0.5)] dark:hover:border-[rgba(118,145,196,0.5)]  rounded-xl p-4 hover:-translate-y-1 transition-transform duration-300">
+        <div class="flex flex-row justify-between">
+          <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="invisible group-hover:visible scale-0 group-hover:scale-100 transition-transform
+            text-sky-600 "
+          >
+            <LinkIcon class="size-8 " />
+          </a>
+        </div>
         <p class="mb-2 text-pretty opacity-75">{description}</p>
         <ul class="flex flex-row gap-3 items-center">
           {tags.map((tag) => (
