@@ -8,6 +8,7 @@ import MailIcon from "../icons/Mail.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import SubTaskIcon from "../icons/SubTask.astro";
 import Projects from "../components/Projects.astro";
+import MailContact from "../components/MailContact.astro";
 ---
 
 <Layout
@@ -86,19 +87,23 @@ import Projects from "../components/Projects.astro";
         <Projects />
       </div>
     </SectionContainer>
+    <SectionContainer>
+      <!-- Contact -->
+      <MailContact />
+    </SectionContainer>
   </main>
-  <script>
-    import { isVisible } from "../store";
-
-    function isPhotoVisible(entries: any) {
-      const entry = entries[0];
-      isVisible.set(entry.isIntersecting);
-    }
-
-    const myProfile = document.querySelector("#myProfile")!;
-
-    const observer = new IntersectionObserver(isPhotoVisible, {});
-
-    observer.observe(myProfile);
-  </script>
 </Layout>
+<script>
+  import { isVisible } from "../store";
+
+  function isPhotoVisible(entries: any) {
+    const entry = entries[0];
+    isVisible.set(entry.isIntersecting);
+  }
+
+  const myProfile = document.querySelector("#myProfile")!;
+
+  const observer = new IntersectionObserver(isPhotoVisible, {});
+
+  observer.observe(myProfile);
+</script>

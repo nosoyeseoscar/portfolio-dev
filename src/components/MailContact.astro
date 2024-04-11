@@ -1,0 +1,40 @@
+---
+import IconSend from "../icons/Send.astro";
+import IconCopy from "../icons/Copy.astro";
+---
+
+<h2 class="text-3xl font-semibold mb-6">Contact</h2>
+<div class="flex flex-row">
+  <!-- <div class="flex flex-row items-center gap-2">
+    <h3 class="text-2xl">Email</h3>
+    <IconMailColored class="size-10" />
+  </div> -->
+  <div class="flex flex-row items-center gap-1 mb-4">
+    <div
+      id="myMail"
+      class="bg-gray-100 py-2 rounded-lg px-6 dark:text-gray-800"
+    >
+      ofuentese@gmail.com
+    </div>
+    <button
+      id=""
+      class="text-sky-600 active:text-sky-100 bg-sky-100 px-4 py-1 rounded-md active:bg-sky-600"
+      ><IconSend class="size-8 transform duration-300" /></button
+    >
+    <button
+      id="copyButton"
+      class="bg-sky-100 active:bg-sky-600 active:text-sky-100 text-sky-600 py-1 rounded-md px-4"
+      ><IconCopy class="size-8 transform duration-300" />
+    </button>
+  </div>
+</div>
+
+<script>
+  const myMail = "ofuentese@gmail.com";
+
+  const copyButton = document.getElementById("copyButton")!;
+
+  copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(myMail);
+  });
+</script>
