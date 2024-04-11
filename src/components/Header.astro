@@ -1,12 +1,14 @@
 ---
 import LightDarkIcon from "../components/LighDark.astro";
-const { visible, invisible } = Astro.props;
 ---
 
 <header
   class="flex flex-row justify-between py-3 w-full lg:w-[840px] items-center mx-auto bg-opacity-80 backdrop-blur-lg"
 >
-  <div id="myDataNav" class="flex flex-row gap-x-3 items-center lg:ml-0 ml-4">
+  <div
+    id="myDataNav"
+    class="flex flex-row gap-x-3 items-center lg:ml-0 ml-4 -translate-y-1 transition-transform ease-linear-out"
+  >
     <img
       class="rounded-full size-12"
       src="../../public/OscarPhoto.jpeg"
@@ -24,7 +26,7 @@ const { visible, invisible } = Astro.props;
 
   isVisible.subscribe((visible) => {
     visible
-      ? myDataNav.classList.add("invisible")
-      : myDataNav.classList.remove("invisible");
+      ? myDataNav.classList.add("scale-0")
+      : myDataNav.classList.remove("scale-0");
   });
 </script>
