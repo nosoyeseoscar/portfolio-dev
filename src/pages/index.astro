@@ -17,12 +17,16 @@ import Projects from "../components/Projects.astro";
   <main class="px-4">
     <SectionContainer class="py-44 pb-22">
       <!-- Hero Section -->
-      <div class="flex sm:flex-row flex-col justify-between gap-4">
+      <div
+        id="myProfile"
+        class="flex sm:flex-row flex-col justify-between gap-4"
+      >
         <!-- TODO: Change Photo Maybe -->
         <img
           class="md:h-32 lg:h-30 sm:h-36 h-60 mx-auto rounded-full shadow-lg dark:shadow-white/10 shadow-slate-900/90"
           src="../../public/OscarPhoto.jpeg"
           alt="oscar's photo comic"
+          id="myPhoto"
         />
         <div class="flex flex-col gap-4">
           <!-- TODO: Implement the Header Sticky and remove Photo -->
@@ -75,13 +79,26 @@ import Projects from "../components/Projects.astro";
       <!-- Projects Section -->
       <h2 class="text-3xl font-semibold mb-10 flex gap-x-2 items-center">
         Projects
-        <SubTaskIcon class="size-7" />
+        <SubTaskIcon class="size-8" />
       </h2>
-      <!-- Cuando ya se tengan más proyectos, se realizará un filtro con las tecnologías usadas para que el que lo lea, pueda ver los proyectos según la tecnología que éste buscando, podría ser con checkbox -->
+      <!--TODO: Cuando ya se tengan más proyectos, se realizará un filtro con las tecnologías usadas para que el que lo lea, pueda ver los proyectos según la tecnología que éste buscando, podría ser con checkbox -->
       <div>
-        <!-- Main projects -->
         <Projects />
       </div>
     </SectionContainer>
   </main>
+  <script>
+    import { isVisible } from "../store";
+
+    function isPhotoVisible(entries: any) {
+      const entry = entries[0];
+      isVisible.set(entry.isIntersecting);
+    }
+
+    const myProfile = document.querySelector("#myProfile")!;
+
+    const observer = new IntersectionObserver(isPhotoVisible, {});
+
+    observer.observe(myProfile);
+  </script>
 </Layout>

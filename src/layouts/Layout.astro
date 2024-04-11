@@ -47,5 +47,20 @@ import "@fontsource-variable/onest";
         overscroll-behavior: none;
       }
     </style>
+    <script>
+      function isPhotoVisible(entries: any) {
+        const entry = entries[0];
+        entry.isIntersecting
+          ? console.log("Elemento visible")
+          : console.log("Elemento no visible");
+      }
+
+      /* const myPhoto = document.querySelector("#myPhoto")!; */
+      const observer = new IntersectionObserver(isPhotoVisible, {});
+      export { observer };
+      /*  document.addEventListener("astro:page-load", () => {
+        
+      }); */
+    </script>
   </body>
 </html>
