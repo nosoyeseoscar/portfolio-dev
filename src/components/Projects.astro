@@ -3,6 +3,8 @@ import JavaScriptIcon from "../icons/JavaScript.astro";
 import CssIcon from "../icons/Css.astro";
 import HtmlIcon from "../icons/Html5.astro";
 import LinkIcon from "../icons/Link.astro";
+import IconAstro from "../icons/IconAstro.astro";
+import ButtonCode from "../components/ButtonCode.astro";
 
 const TAGS = {
   JAVASCRIPT: {
@@ -17,6 +19,10 @@ const TAGS = {
     name: "HTML",
     icon: HtmlIcon,
   },
+  ASTRO: {
+    name: "Astro",
+    icon: IconAstro,
+  },
 };
 
 const PROJECTS_MAIN = [
@@ -27,7 +33,7 @@ const PROJECTS_MAIN = [
     link: "#",
     github: "#",
     image: "https://via.placeholder.com/300x200",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
   },
   {
     title: "Project 2",
@@ -81,7 +87,7 @@ const PROJECTS_SECOND = [
 ---
 
 {
-  PROJECTS_MAIN.map(({ image, title, description, tags }) => (
+  PROJECTS_MAIN.map(({ image, title, description, tags, link }) => (
     <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-[rgba(118,145,196,0.3)] dark:hover:bg-zinc-800 hover:bg-[rgba(118,145,196,0.5)] rounded-xl p-4 ">
       <img
         class="rounded-xl shadow-lg dark:shadow-white/10 shadow-slate-900/80"
@@ -101,6 +107,10 @@ const PROJECTS_SECOND = [
             </li>
           ))}
         </ul>
+        <div class="flex flex-row gap-4 mt-6">
+          <ButtonCode href={link} type="code" />
+          <ButtonCode href={link} type="live" />
+        </div>
       </div>
     </article>
   ))
