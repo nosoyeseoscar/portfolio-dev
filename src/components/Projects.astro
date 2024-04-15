@@ -23,6 +23,7 @@ const TAGS = {
     name: "Astro",
     icon: IconAstro,
   },
+  /* TODO: poner icono next y react*/
 };
 
 const PROJECTS_MAIN = [
@@ -36,12 +37,12 @@ const PROJECTS_MAIN = [
     tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
   },
   {
-    title: "Project 2",
+    title: "Event Calendar",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ipsum provident numquam omnis fuga saepe rem earum deserunt iure veniam assumenda similique quis alias quisquam tempora obcaecati, totam possimus repellat!",
-    link: "#",
+      "Event calendar for meetings or event room booking, only the Front-End part.",
+    link: "https://github.com/nosoyeseoscar/event_calendar",
     github: "#",
-    image: "https://via.placeholder.com/300x200",
+    image: "/projects/Event Calendar.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
 ];
@@ -89,12 +90,14 @@ const PROJECTS_SECOND = [
 {
   PROJECTS_MAIN.map(({ image, title, description, tags, link }) => (
     <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-[rgba(118,145,196,0.3)] dark:hover:bg-zinc-800 hover:bg-[rgba(118,145,196,0.5)] rounded-xl p-4 ">
-      <img
-        class="rounded-xl"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${title}}`}
-      />
-      <div>
+      <div class="overflow-hidden rounded-xl">
+        <img
+          class=" object-cover transition duration-300 ease-in-out hover:scale-110 rounded-xl"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}}`}
+        />
+      </div>
+      <div class="">
         <div>
           <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
           <a target="_blank" rel="noopener noreferrer" />
