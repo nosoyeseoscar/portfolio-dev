@@ -47,7 +47,7 @@ const PROJECTS_MAIN = [
       "A blog in spanish where I talk about technology, curiosities, and news from the tech world, tips and issues, and the solutions I encounter on my journey to become a developer.",
     link: "#",
     github: "#",
-    image: "https://via.placeholder.com/300x200",
+    image: "/projects/blog.webp",
     tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.TAILWIND],
   },
   {
@@ -104,18 +104,15 @@ const PROJECTS_SECOND = [
 {
   PROJECTS_MAIN.map(({ image, title, description, tags, link, github }) => (
     <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-[rgba(118,145,196,0.3)] dark:hover:bg-zinc-800 hover:bg-[rgba(118,145,196,0.5)] rounded-xl p-4 ">
-      <div class="overflow-hidden rounded-xl">
+      <div class="flex overflow-hidden md:w-1/2">
         <img
-          class=" object-cover transition duration-300 ease-in-out hover:scale-110 rounded-xl"
+          class="object-cover transition duration-300 ease-in-out hover:scale-110"
           src={image}
-          alt={`Captura de pantalla del proyecto ${title}}`}
+          alt={`Captura de pantalla del proyecto ${title}`}
         />
       </div>
-      <div class="">
-        <div>
-          <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
-          <a target="_blank" rel="noopener noreferrer" />
-        </div>
+      <div class="flex flex-col md:w-1/2 ">
+        <h3 class="text-3xl mb-2 font-semibold">{title}</h3>
         <p class="mb-2 text-pretty opacity-75 ">{description}</p>
         <ul class="flex flex-row gap-3 items-center">
           {tags.map((tag) => (
