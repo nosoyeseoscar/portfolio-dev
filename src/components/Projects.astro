@@ -5,6 +5,9 @@ import HtmlIcon from "../icons/Html5.astro";
 import LinkIcon from "../icons/Link.astro";
 import IconAstro from "../icons/IconAstro.astro";
 import ButtonCode from "../components/ButtonCode.astro";
+import IconNext from "../icons/Next.astro";
+import IconReact from "../icons/React.astro";
+import IconTailwind from "../icons/Tailwind.astro";
 
 const TAGS = {
   JAVASCRIPT: {
@@ -23,7 +26,18 @@ const TAGS = {
     name: "Astro",
     icon: IconAstro,
   },
-  /* TODO: poner icono next y react*/
+  NEXT: {
+    name: "NextJs",
+    icon: IconNext,
+  },
+  REACT: {
+    name: "React JS",
+    icon: IconReact,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    icon: IconTailwind,
+  },
 };
 
 const PROJECTS_MAIN = [
@@ -34,16 +48,16 @@ const PROJECTS_MAIN = [
     link: "#",
     github: "#",
     image: "https://via.placeholder.com/300x200",
-    tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
+    tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.TAILWIND],
   },
   {
     title: "Event Calendar",
     description:
       "Event calendar for meetings or event room booking, only the Front-End part.",
-    link: "https://github.com/nosoyeseoscar/event_calendar",
-    github: "#",
+    link: "https://event-calendar-sigma.vercel.app/",
+    github: "https://github.com/nosoyeseoscar/event_calendar",
     image: "/projects/Event Calendar.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    tags: [TAGS.NEXT, TAGS.REACT],
   },
 ];
 
@@ -88,7 +102,7 @@ const PROJECTS_SECOND = [
 ---
 
 {
-  PROJECTS_MAIN.map(({ image, title, description, tags, link }) => (
+  PROJECTS_MAIN.map(({ image, title, description, tags, link, github }) => (
     <article class="flex sm:flex-row flex-col my-8 mx-1 gap-4 bg-[rgba(118,145,196,0.3)] dark:hover:bg-zinc-800 hover:bg-[rgba(118,145,196,0.5)] rounded-xl p-4 ">
       <div class="overflow-hidden rounded-xl">
         <img
@@ -111,7 +125,7 @@ const PROJECTS_SECOND = [
           ))}
         </ul>
         <div class="flex flex-row gap-4 mt-6">
-          <ButtonCode href={link} type="code" />
+          <ButtonCode href={github} type="code" />
           <ButtonCode href={link} type="live" />
         </div>
       </div>
